@@ -4,10 +4,14 @@
     <label for="username">Username: </label>
     <input id="username" type="text" formControlName="username" />
   </div>
+  {{ authForm.controls.username.errors | json }}
+
   <div class="field">
     <label for="password">Password: </label>
     <input id="password" type="text" formControlName="password" />
   </div>
+  {{ authForm.controls.password.errors | json }}
+
   <div class="field">
     <label for="passwordConfirmation">Confirm Password: </label>
     <input
@@ -16,5 +20,12 @@
       formControlName="passwordConfirmation"
     />
   </div>
+  {{ authForm.controls.passwordConfirmation.errors | json }}
+
   <button class="ui submit button primary">Submit</button>
 </form>
+
+<br />
+Form errors: {{ authForm.errors | json }}
+<br />
+Form valid: {{ authForm.valid | json }}
